@@ -65,13 +65,6 @@ export default abstract class QueryBaseService {
       };
       try {
         console.log(`GET: ${url}?${queryString}`);
-        // fetch(`${url}?${queryString}`)
-        //     .then(response => {
-        //         resolve(response.json())
-        //     })
-        //     .catch(err => {
-        //         throw err
-        //     })
         this.worker.postMessage(`${url}?${queryString}`);
       } catch (err) {
         console.log(err);
